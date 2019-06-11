@@ -21,44 +21,90 @@ class IndexController extends Controller
     }
 
     /**
-     * Index method.
+     * Display a listing of the resource.
      *
      * @return void
      */
     public function index()
     {
-        //trigger_error('msg');
-        //throw new \Exception('msg');
-        $this->template('index', ['name'=>'IronPHP', 'version'=>Application::VERSION]);
-        #Examples
-        //$data = $this->model('IndexModel')->get('name');
-        //$data = $this->model('IndexModel')->get(null, ['id' => 1]);
-        //$data = $this->model('IndexModel')->get(null, ['id' => 1, 'status' => 0]);
-        //$data = $this->model('IndexModel')->get(null, 'WHERE id = 2 AND status = 1');
-        //$data = $this->model('IndexModel')->add();
-        //$data = $this->model('IndexModel')->update();
-        //$data = $this->model('IndexModel')->delete();
-        //$this->view('index');
-        //$this->view('index', $data);
+        $data = $this->model('IndexModel')->getAll();
+        
+        $this->template('index', $data);
     }
 
     /**
-     * Parameter method.
+     * Show the form for creating a new resource.
      *
      * @return void
      */
-    public function name($param)
+    public function create()
     {
-        return "Name($param) Method Called";
+        $this->template('create', ['server_root' => SERVER_ROOT]);
     }
 
     /**
-     * Show users from model.
+     * Store a newly created resource in storage.
      *
      * @return void
      */
-    public function showUsers()
+    public function store()
     {
-        print_r($this->model->getUsers());
+        if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
+            $save = $this->model('IndexModel')->add($_POST);
+        }
+        header("Location: ".SERVER_ROOT);
+        exit;
     }
-} 
+
+    /**
+     * Display the specified resource.
+     *
+     * @return void
+     */
+    public function show()
+    {
+        $product = $this->model('IndexModel')->get($this->getParam()['id']);
+        
+        $this->template('show', $product);
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @return void
+     */
+    public function edit()
+    {
+        $product = $this->model('IndexModel')->get($this->getParam()['id']);
+
+        $this->template('edit', $product);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @return void
+     */
+    public function update()
+    {
+        if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
+            $update = $this->model('IndexModel')->update($_POST, $this->getParam()['id']);
+        }
+        header("Location: ".SERVER_ROOT);
+        exit;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @return void
+     */
+    public function destroy()
+    {
+        $delete = $this->model('IndexModel')->delete($this->getParam()['id']);
+        $product->delete();
+  
+        header("Location: ".SERVER_ROOT);
+        exit;
+    }
+}

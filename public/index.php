@@ -75,3 +75,13 @@ if(env('APP_DEBUG')) {
     echo 'TOTAL           : '.round((IRONPHP_END - IRONPHP_START), 4)." seconds<br>";
     echo '</pre>';
 }
+$i=6;
+echo '<pre>'.
+    round(IRONPHP_START, $i)."\n".
+    round(CONFIG_LOADED, $i)."\n".
+    round(REQUEST_CATCHED, $i)."\n".
+    round(ROUTES_LOADED, $i)."\n".
+    round(ROUTE_MATCHED, $i)."\n".
+    round(DISPATCHER_INIT, $i)."\n".
+    round(DISPATCHED, $i)."\n".
+    round(RESPONSE_SEND, $i)."\n";

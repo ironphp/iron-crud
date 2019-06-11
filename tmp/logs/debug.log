@@ -1,1 +1,13 @@
 
+[2019-19-09 08:36:19] Type: Exception; Message: show method is missing in App\Controller\IndexController Controller.; File: D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\Foundation\Application.php; Line: 282;
+
+[2019-19-09 09:58:13] Type: Exception; Message: template(): expects parameter 2 to be array, null given; File: D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\View\View.php; Line: 317;
+
+[2019-19-09 09:58:13] Type: Exception; Message: template(): expects parameter 2 to be array, null given; File: D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\View\View.php; Line: 317;
+
+[2019-19-09 09:58:18] Type: Exception; Message: template(): expects parameter 2 to be array, null given; File: D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\View\View.php; Line: 317;
+
+[2019-19-09 15:03:24] Type: ArgumentCountError; Message: Too few arguments to function App\Controller\IndexController::show(), 0 passed in D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\Controller\Controller.php on line 246 and exactly 1 expected; File: D:\xampp\htdocs\iron-crud\app\Controller\IndexController.php; Line: 111;
+
+[2019-19-09 15:05:03] Type: ArgumentCountError; Message: Too few arguments to function App\Controller\IndexController::show(), 0 passed in D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\Controller\Controller.php on line 246 and exactly 1 expected; File: D:\xampp\htdocs\iron-crud\app\Controller\IndexController.php; Line: 111;
+

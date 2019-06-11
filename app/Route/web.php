@@ -32,7 +32,7 @@ Route::post('/', 'IndexController@store');
 Route::get('/{id}/edit', 'IndexController@edit');
 
 #store
-Route::post('/{id}/update', 'IndexController@update');
+Route::post('/{id}', 'IndexController@update');
 
 #show
 Route::get('/{id}/delete', 'IndexController@destroy');
