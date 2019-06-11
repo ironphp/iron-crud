@@ -66,22 +66,12 @@ define('IRONPHP_END', microtime(true));
 if(env('APP_DEBUG')) {
     echo '<hr><pre>';
     echo 'CONFIG_LOADED   : '.round((CONFIG_LOADED - IRONPHP_START), 4)." seconds<br>";
-    echo 'REQUEST_CATCHED : '.round((REQUEST_CATCHED - CONFIG_LOADED), 4)." seconds<br>";
-    echo 'ROUTES_LOADED   : '.round((ROUTES_LOADED - REQUEST_CATCHED), 4)." seconds<br>";
-    echo 'ROUTE_MATCHED   : '.round((ROUTE_MATCHED - ROUTES_LOADED), 4)." seconds<br>";
+    echo 'ROUTES_LOADED   : '.round((ROUTES_LOADED - CONFIG_LOADED), 4)." seconds<br>";
+    echo 'REQUEST_CATCHED : '.round((REQUEST_CATCHED - ROUTES_LOADED), 4)." seconds<br>";
+    echo 'ROUTE_MATCHED   : '.round((ROUTE_MATCHED - REQUEST_CATCHED), 4)." seconds<br>";
     echo 'DISPATCHER_INIT : '.round((DISPATCHER_INIT - ROUTE_MATCHED), 4)." seconds<br>";
     echo 'DISPATCHED      : '.round((DISPATCHED - DISPATCHER_INIT), 4)." seconds<br>";
     echo 'RESPONSE_SEND   : '.round((RESPONSE_SEND - DISPATCHED), 4)." seconds<br>";
     echo 'TOTAL           : '.round((IRONPHP_END - IRONPHP_START), 4)." seconds<br>";
     echo '</pre>';
 }
-$i=6;
-echo '<pre>'.
-    round(IRONPHP_START, $i)."\n".
-    round(CONFIG_LOADED, $i)."\n".
-    round(REQUEST_CATCHED, $i)."\n".
-    round(ROUTES_LOADED, $i)."\n".
-    round(ROUTE_MATCHED, $i)."\n".
-    round(DISPATCHER_INIT, $i)."\n".
-    round(DISPATCHED, $i)."\n".
-    round(RESPONSE_SEND, $i)."\n";
