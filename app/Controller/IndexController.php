@@ -102,7 +102,6 @@ class IndexController extends Controller
     public function destroy()
     {
         $delete = $this->model('IndexModel')->delete($this->getParam()['id']);
-        $product->delete();
   
         header("Location: ".SERVER_ROOT);
         exit;
