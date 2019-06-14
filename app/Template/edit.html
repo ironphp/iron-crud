@@ -54,6 +54,7 @@
                 <div class="card-body">
                     {{products:}}
                     <form action="{{server_root}}/{{id}}" method="POST">
+                        <input type="hidden" name="_method" value="PUT">
                          <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">

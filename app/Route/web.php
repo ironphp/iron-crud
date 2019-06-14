@@ -32,7 +32,14 @@ Route::post('/', 'IndexController@store');
 Route::get('/{id}/edit', 'IndexController@edit');
 
 #store
-Route::post('/{id}', 'IndexController@update');
+Route::put('/{id}', 'IndexController@update');
 
 #show
-Route::get('/{id}/delete', 'IndexController@destroy');
+Route::delete('/{id}', 'IndexController@destroy');
+
+//Route::get($uri, $callback);
+//Route::post($uri, $callback);
+//Route::put($uri, $callback);
+#Route::patch($uri, $callback);
+//Route::delete($uri, $callback);
+#Route::options($uri, $callback);

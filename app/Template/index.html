@@ -64,11 +64,14 @@
                     <td>$ {{price}}</td>
                     <td>{{detail}}</td>
                     <td>
-                        <a class="btn btn-sm btn-info text-white" href="{{server_root}}/{{id}}"><i class="fas fa-eye"></i> Show</a>
+                    	<form action="{{server_root}}/{{id}}" method="POST">
+			                <input type="hidden" name="_method" value="DELETE">
+                            <a class="btn btn-sm btn-info text-white" href="{{server_root}}/{{id}}"><i class="fas fa-eye"></i> Show</a>
 
-                        <a class="btn btn-sm btn-primary text-white" href="{{server_root}}/{{id}}/edit"><i class="fas fa-edit"></i> Edit</a>
+                            <a class="btn btn-sm btn-primary text-white" href="{{server_root}}/{{id}}/edit"><i class="fas fa-edit"></i> Edit</a>
 
-                        <a class="btn btn-sm btn-danger text-white" href="{{server_root}}/{{id}}/delete"><i class="fas fa-trash"></i> Delete</a>
+                            <button class="btn btn-sm btn-danger text-white"><i class="fas fa-trash"></i> Delete</button>
+			            </form>
                     </td>
                 </tr>
                 {{:products}}
