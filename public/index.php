@@ -7,6 +7,7 @@
  */
 
 define('IRONPHP_START', microtime(true));
+#define('LINEBREAK', "\r\n");
 
 $root = isset($root) ? $root : true;
 
