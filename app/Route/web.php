@@ -16,26 +16,8 @@ use Friday\Http\Route;
  *
  */
 
-#index
-Route::get('/', 'IndexController@index');
-
-#show
-Route::get('/{id}', 'IndexController@show');
-
-#create
-Route::get('/create', 'IndexController@create');
-
-#store
-Route::post('/', 'IndexController@store');
-
-#show
-Route::get('/{id}/edit', 'IndexController@edit');
-
-#store
-Route::put('/{id}', 'IndexController@update');
-
-#show
-Route::delete('/{id}', 'IndexController@destroy');
+#resource
+Route::get('/', 'IndexController');
 
 //Route::get($uri, $callback);
 //Route::post($uri, $callback);
