@@ -5,9 +5,9 @@
  * @package       IronPHP Application
  * @auther        GaurangKumar Parmar <gaurangkumarp@gmail.com>
  */
-
+//print_r(['root', $_POST, $_GET]);exit;
 define('IRONPHP_START', microtime(true));
-#define('LINEBREAK', "\r\n");
+define('LINEBREAK', "\r\n");
 
 $root = isset($root) ? $root : true;
 

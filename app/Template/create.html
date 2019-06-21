@@ -13,7 +13,6 @@
 
     <title>IronPHP Framework - CRUD</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -39,7 +38,7 @@
                     <h2>Add New Product</h2>
                 </div>
                 <div class="col-lg-4 pull-right push-right float-right">
-                    <a class="btn btn-success pull-right push-right float-right" href="{{server_root}}/"><i class="fas fa-backspace"></i> Back To Home</a>
+                    <a class="btn btn-success pull-right push-right float-right" href="{{server_root}}"><i class="fas fa-backspace"></i> Back To Home</a>
                 </div>
             </div>
             <!--
@@ -53,6 +52,7 @@
             <div class="card border-primary">
                 <div class="card-body">
                     <form action="{{server_root}}" method="POST">
+                         <input type="hidden" name="_token" value="{{_token}}">
                          <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
@@ -84,25 +84,6 @@
         </section>
     </div>
 
-<!--
-    <header class="style">
-        <img src="logo.png" alt="IronPHP" width="100">
-        <h1>{{name}} {{version}}</h1>
-    </header>
-    <h1 style="font-size:50px">The PHP Framework</h1>
-    <h3 style="text-align:center">
-        Developed and Maintained By <a href="https://twitter.com/gaurangkumarp" title="GaurangKumar on Twitter">GaurangKumar</a>
-        On
-        <a href="https://github.com/ironphp/ironphp" title="IronPHP on GitHub">
-            <i class="fab fa-1x fa-github"></i> Github
-        </a>
-    </h3>
-    <h3 style="text-align:center">
-        Follow us on <a href="https://www.facebook.com/IronPHP-Framwork-325690624644002/" title="IronPHP on Facebook">
-        <i class="fab fa-1x fa-facebook"></i> Facebook
-        </a>
-    </h3>
--->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

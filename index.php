@@ -5,6 +5,7 @@
  * @package       IronPHP Application
  * @auther        GaurangKumar Parmar <gaurangkumarp@gmail.com>
  */
+//print_r(['non-root', $_POST, $_GET]);exit;
 
 $root = false;
 

@@ -17,7 +17,7 @@ use Friday\Http\Route;
  */
 
 #resource
-Route::get('/', 'IndexController');
+Route::resource('/', 'IndexController');
 
 //Route::get($uri, $callback);
 //Route::post($uri, $callback);

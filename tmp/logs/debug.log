@@ -11,3 +11,5 @@
 
 [2019-19-09 15:05:03] Type: ArgumentCountError; Message: Too few arguments to function App\Controller\IndexController::show(), 0 passed in D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\Controller\Controller.php on line 246 and exactly 1 expected; File: D:\xampp\htdocs\iron-crud\app\Controller\IndexController.php; Line: 111;
 
+[2019-19-21 10:28:24] Type: OutOfRangeException; Message: No route matched the given URI : /create; File: D:\xampp\htdocs\iron-crud\vendor\ironphp\ironphp\src\Friday\Http\Router.php; Line: 82;
+
