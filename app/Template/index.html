@@ -64,6 +64,7 @@
                     <td>{{detail}}</td>
                     <td>
                     	<form action="{{server_root}}{{id}}" method="POST">
+                            <input type="hidden" name="_token" value="{{_token}}">
 			                <input type="hidden" name="_method" value="DELETE">
                             <a class="btn btn-sm btn-info text-white" href="{{server_root}}{{id}}"><i class="fas fa-eye"></i> Show</a>
 

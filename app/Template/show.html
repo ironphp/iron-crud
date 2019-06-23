@@ -79,6 +79,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                     	    <form action="{{server_root}}{{id}}" method="POST">
+                                <input type="hidden" name="_token" value="{{_token}}">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <a class="btn btn-sm btn-primary text-white" href="{{server_root}}{{id}}/edit/"><i class="fas fa-edit"></i> Edit</a>
 
