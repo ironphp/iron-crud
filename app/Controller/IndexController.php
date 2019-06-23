@@ -27,7 +27,6 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //print_r(__METHOD__);exit;
         $data = $this->model('IndexModel')->getAll();
         
         $this->template('index', $data);
@@ -50,7 +49,6 @@ class IndexController extends Controller
      */
     public function store()
     {
-        //print_r(__METHOD__);exit;
         if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
             $save = $this->model('IndexModel')->add($_POST);
         }
@@ -65,7 +63,6 @@ class IndexController extends Controller
      */
     public function show()
     {
-        //print_r(__METHOD__);exit;
         $product = $this->model('IndexModel')->get($this->getParam()['id']);
         
         $this->template('show', $product);
@@ -78,7 +75,6 @@ class IndexController extends Controller
      */
     public function edit()
     {
-        //print_r(__METHOD__);exit;
         $product = $this->model('IndexModel')->get($this->getParam()['id']);
 
         $this->template('edit', $product);
@@ -91,7 +87,6 @@ class IndexController extends Controller
      */
     public function update()
     {
-        //print_r(__METHOD__);exit;
         if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
             $update = $this->model('IndexModel')->update($_POST, $this->getParam()['id']);
         }
@@ -106,7 +101,6 @@ class IndexController extends Controller
      */
     public function destroy()
     {
-        //print_r(__METHOD__);exit;
         $delete = $this->model('IndexModel')->delete($this->getParam()['id']);
   
         header("Location: ".SERVER_ROOT);
