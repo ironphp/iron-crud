@@ -1,13 +1,11 @@
 <?php
 /**
- * @package       IronPHP Application
  * @auther        GaurangKumar Parmar <gaurangkumarp@gmail.com>
  */
 
 namespace App\Controller;
 
 use Friday\Controller\Controller;
-use Friday\Foundation\Application;
 
 class IndexController extends Controller
 {
@@ -16,7 +14,7 @@ class IndexController extends Controller
      *
      * @return void
      */
-    function __construct()
+    public function __construct()
     {
     }
 
@@ -28,7 +26,7 @@ class IndexController extends Controller
     public function index()
     {
         $data = $this->model('IndexModel')->getAll();
-        
+
         $this->template('index', $data);
     }
 
@@ -49,10 +47,10 @@ class IndexController extends Controller
      */
     public function store()
     {
-        if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
+        if (!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
             $save = $this->model('IndexModel')->add($_POST);
         }
-        header("Location: ".SERVER_ROOT);
+        header('Location: '.SERVER_ROOT);
         exit;
     }
 
@@ -64,7 +62,7 @@ class IndexController extends Controller
     public function show()
     {
         $product = $this->model('IndexModel')->get($this->getParam()['id']);
-        
+
         $this->template('show', $product);
     }
 
@@ -87,10 +85,10 @@ class IndexController extends Controller
      */
     public function update()
     {
-        if(!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
+        if (!empty($_POST['name']) && !empty($_POST['price']) && !empty($_POST['detail'])) {
             $update = $this->model('IndexModel')->update($_POST, $this->getParam()['id']);
         }
-        header("Location: ".SERVER_ROOT);
+        header('Location: '.SERVER_ROOT);
         exit;
     }
 
@@ -102,8 +100,8 @@ class IndexController extends Controller
     public function destroy()
     {
         $delete = $this->model('IndexModel')->delete($this->getParam()['id']);
-  
-        header("Location: ".SERVER_ROOT);
+
+        header('Location: '.SERVER_ROOT);
         exit;
     }
 }
