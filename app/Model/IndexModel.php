@@ -1,6 +1,5 @@
 <?php
 /**
- * @package       IronPHP Application
  * @auther        GaurangKumar Parmar <gaurangkumarp@gmail.com>
  */
 
@@ -18,33 +17,36 @@ class IndexModel extends ModelService
     public function getAll()
     {
         $products = $this->table('products')->getPaginated(5);
-        $pagination = $this->getPaginationHtml('?');//, null, ['ul' => 'pagination', 'li' => ['page-item', 'page-item', 'page-item active'], 'a' => 'page-link']
+        $pagination = $this->getPaginationHtml('?'); //, null, ['ul' => 'pagination', 'li' => ['page-item', 'page-item', 'page-item active'], 'a' => 'page-link']
         return [
             'server_root' => SERVER_ROOT,
-            'products' => $products,
-            'pagination'=>$pagination
+            'products'    => $products,
+            'pagination'  => $pagination,
         ];
     }
 
     /**
      * Get data from table.
      *
-     * @param  int   $id
+     * @param int $id
+     *
      * @return void
      */
     public function get($id)
     {
         $products = $this->table('products')->where(['id'=>$id])->get();
+
         return [
             'server_root' => SERVER_ROOT,
-            'products' => [$products]
+            'products'    => [$products],
         ];
     }
 
     /**
      * Add data to table.
      *
-     * @param  array  $request
+     * @param array $request
+     *
      * @return bool
      */
     public function add($request)
@@ -55,8 +57,9 @@ class IndexModel extends ModelService
     /**
      * Update data from table.
      *
-     * @param  array  $request
-     * @param  int   $id
+     * @param array $request
+     * @param int   $id
+     *
      * @return void
      */
     public function update($request, $id)
@@ -67,7 +70,8 @@ class IndexModel extends ModelService
     /**
      * Delete data from table.
      *
-     * @param  int   $id
+     * @param int $id
+     *
      * @return void
      */
     public function delete($id)
