@@ -3,6 +3,15 @@
     <a href="https://packagist.org/packages/ironphp/app" target="_blank">
         <img alt="Total Downloads" src="https://poser.pugx.org/ironphp/app/d/total.svg">
     </a>
+    <a href="https://circleci.com/gh/ironphp/app" target="_blank">
+        <img alt="CircleCI Build status" src="https://circleci.com/gh/ironphp/app.svg?style=svg">
+    </a>
+    <a href="https://github.styleci.io/repos/159154661">
+        <img src="https://github.styleci.io/repos/159154661/shield?branch=master" alt="StyleCI">
+    </a>
+    <a href="https://ci.appveyor.com/project/gaurangkumar/app" target="_blank">
+        <img alt="AppVeyor Build status" src="https://ci.appveyor.com/api/projects/status/2dg847baixltt4p4?svg=true">
+    </a>
     <a href="https://packagist.org/packages/ironphp/app" target="_blank">
         <img alt="Latest Stable Version" src="https://poser.pugx.org/ironphp/app/v/stable.svg">
     </a>
@@ -18,7 +27,7 @@ uses Front Controller, and MVC.
 
 The Framework source code can be found here: [ironphp/ironphp](https://github.com/ironphp/ironphp).
 
-> **Note:** No stable release yet - [IronPHP Framework 1.0.3 alpha1](https://github.com/ironphp/ironphp/releases/tag/1.0.3-alpha1) version has been released. 
+> **Note:** No stable release yet - [IronPHP Framework 1.0.5 alpha4](https://github.com/ironphp/ironphp/releases/tag/1.0.5-alpha4) version has been released.
 
 ## Table of Contents
 
@@ -42,9 +51,15 @@ You can install IronPHP as your project using
 [Composer](https://getcomposer.org)  as
 a starting point. you can run the following:
 
-1. Download [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist ironphp/app [dir_name]`.
+1. Download [Composer-Setup.exe](https://getcomposer.org/Composer-Setup.exe) or download `composer.phar` file.
+2. Run `.
 
+
+If Composer is installed locally, run
+
+``` bash
+$ php composer.phar create-project ironphp/app
+```
 
 If Composer is installed globally, run
 
@@ -56,6 +71,12 @@ In case you want to use a custom app dir name (e.g. `/myapp/`):
 
 ```bash
 $ composer create-project --prefer-dist ironphp/app myapp
+```
+
+You can directly clone this repo:
+
+```bash
+$ git clone https://github.com/ironphp/app.git myapp
 ```
 
 Go to myapp dir, if installed with myapp dirname:
@@ -70,13 +91,20 @@ Go to ironphp dir, if installed without dirname:
 $ cd app
 ```
 
+If you have cloned or downloaded this repo, then you have to manually create `.env` file and generate `APP_KEY`:
+
+```bash
+$ copy .env.example .env
+$ php jarvis key
+```
+
 You can now use php developement webserver to view the default home page:
 
 ```bash
 $ php jarvis serve
 ```
 
-You can also use jarvis by shortcut for windows:
+You can also use jarvis by shortcut for *Windows* (*only work in cmd*, not supported in Windows PowerShell, or Linux/MacOS terminal):
 
 ```bash
 $ jarvis serve
@@ -88,7 +116,13 @@ Then visit [http://localhost:8000](http://localhost:8000) to see the welcome pag
 
 Since this is a starting point for your application and various files
 would have been modified as per your needs, there isn't a way to provide
-automated upgrades atleast for NOT FOR NOW, so you have to do any updates manually.
+automated upgrades atleast for NOT FOR NOW, so you have to update for this app-skeleton manually.
+
+You can update The Framework `ironphp/ironphp` easily:
+
+``` bash
+$ composer update ironphp/ironphp
+```
 
 ## Configuration
 
