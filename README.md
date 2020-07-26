@@ -18,6 +18,9 @@
     <a href="https://opensource.org/licenses/MIT" target="_blank">
         <img alt="Software License" src="https://poser.pugx.org/ironphp/app/license.svg">
     </a>
+    <a href="http://hits.dwyl.io/ironphp/ironphp/app" target="_blank">
+        <img alt="HitCount" src="http://hits.dwyl.io/ironphp/ironphp/app.svg">
+    </a>
 </p>
 
 ## About IronPHP
@@ -27,7 +30,7 @@ uses Front Controller, and MVC.
 
 The Framework source code can be found here: [ironphp/ironphp](https://github.com/ironphp/ironphp).
 
-> **Note:** No stable release yet - [IronPHP Framework 1.0.5 alpha4](https://github.com/ironphp/ironphp/releases/tag/1.0.5-alpha4) version has been released.
+> **Note:** No stable release yet - [IronPHP Framework 1.0.9 alpha1](https://github.com/ironphp/ironphp/releases/tag/1.0.9-alpha1) version has been released.
 
 ## Table of Contents
 
@@ -43,7 +46,7 @@ The Framework source code can be found here: [ironphp/ironphp](https://github.co
 
 ## Requirements
 
-IronPHP requires PHP 5.5 or later; we recommend using the latest PHP version whenever possible.
+IronPHP requires PHP 7.2 or later; we recommend using the latest PHP version whenever possible.
 
 ## Installing IronPHP via Composer
 

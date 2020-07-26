@@ -26,56 +26,77 @@ class IndexModel extends ModelService
     }
 
     /**
+     * Variable.
+     *
+     * @var array
+     */
+    public $data = ['name' => 'GK'];
+
+    /**
      * Get data from table.
      *
-     * @param int $id
+     * @param mix $field
+     * @param int|null $id
      *
      * @return void
      */
-    public function get($id)
+    public function get($field = null, $id = null)
     {
+        if ($id == null || (is_array($id) && count($id) == 0)) {
+            return $this->table('user')->get($field);
+        } else {
+            return $this->table('user')->where($id)->get($field);
+        }
+/*
+    public function get($id)
         $products = $this->table('products')->where(['id'=>$id])->get();
 
         return [
             'server_root' => SERVER_ROOT,
             'products'    => [$products],
         ];
+*/
     }
 
     /**
      * Add data to table.
      *
-     * @param array $request
-     *
-     * @return bool
+     * @return void
      */
-    public function add($request)
+    public function add()
     {
+        return $this->table('user')->add(['id'=>3, 'name'=>'pihu', 'user'=>'pihu', 'password'=>'123', 'status'=>1]);
+/*
+    public function add($request)
         return $this->table('products')->add(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
+*/
     }
 
     /**
      * Update data from table.
      *
-     * @param array $request
-     * @param int   $id
-     *
      * @return void
      */
-    public function update($request, $id)
+    public function update()
     {
+        return $this->table('user')->where(['id'=>1])->update(['status'=>1, 'name'=>'illu']);
+/*
+    public function update($request, $id)
         return $this->table('products')->where(['id'=>$id])->update(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
+*/
     }
 
     /**
      * Delete data from table.
      *
-     * @param int $id
-     *
      * @return void
      */
-    public function delete($id)
+    public function delete()
     {
+        return $this->table('user')->where(['id'=>1])->delete();
+/*
+    public function delete($id)
         return $this->table('products')->where(['id'=>$id])->delete();
+*/
     }
 }

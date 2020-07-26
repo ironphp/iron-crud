@@ -6,6 +6,7 @@
 namespace App\Controller;
 
 use Friday\Controller\Controller;
+use Friday\Foundation\Application;
 
 class IndexController extends Controller
 {
@@ -19,7 +20,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Index method.
      *
      * @return void
      */

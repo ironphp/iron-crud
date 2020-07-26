@@ -35,10 +35,10 @@
 
             <div class="row">
                 <div class="col-lg-8">
-                    <h2>All Products</h2>
+                    <h2>Product's Details</h2>
                 </div>
                 <div class="col-lg-4 pull-right push-right float-right">
-                    <a class="btn btn-success pull-right push-right float-right" href="{{server_root}}create">Create New Product</a>
+                    <a class="btn btn-success pull-right push-right float-right" href="<?=e(server_root)?>"><i class="fas fa-backspace"></i> Back To Home</a>
                 </div>
             </div>
             <!--
@@ -48,38 +48,48 @@
                 </div>
             endif
             -->
-            <table class="table table-bordered table-striped table-hover">
-                <thead class="text-white bg-primary">
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Details</th>
-                    <th width="280px">Action</th>
-                </thead>
-                {{products:}}
-                <tr>
-                    <td>{{id}}</td>
-                    <td>{{name}}</td>
-                    <td>$ {{price}}</td>
-                    <td>{{detail}}</td>
-                    <td>
-                    	<form action="{{server_root}}{{id}}" method="POST">
-                            <input type="hidden" name="_token" value="{{_token}}">
-			                <input type="hidden" name="_method" value="DELETE">
-                            <a class="btn btn-sm btn-info text-white" href="{{server_root}}{{id}}"><i class="fas fa-eye"></i> Show</a>
 
-                            <a class="btn btn-sm btn-primary text-white" href="{{server_root}}{{id}}/edit"><i class="fas fa-edit"></i> Edit</a>
+            <div class="card border-primary">
+                <div class="card-body">
+                    <?=e(products:)?>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>ID:</strong>
+                            <?=e(id)?>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Name:</strong>
+                            <?=e(name)?>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Price:</strong>
+                            $ <?=e(price)?>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                            <strong>Details:</strong>
+                            <?=e(detail)?>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <div class="form-group">
+                    	    <form action="<?=e(server_root)?><?=e(id)?>" method="POST">
+                                <input type="hidden" name="_token" value="1S8mkMaemwfmlBAetRfoytu0YlDBrJElVKRU0++fdXc=">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <a class="btn btn-sm btn-primary text-white" href="<?=e(server_root)?><?=e(id)?>/edit/"><i class="fas fa-edit"></i> Edit</a>
 
-                            <button class="btn btn-sm btn-danger text-white"><i class="fas fa-trash"></i> Delete</button>
-			            </form>
-                    </td>
-                </tr>
-                {{:products}}
-            </table>
-
-            <nav aria-label="Product Page Navigation">
-                {{pagination}}
-            </nav>
+                                <button class="btn btn-sm btn-danger text-white"><i class="fas fa-trash"></i> Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <?=e(:products)?>
+                </div>
+            </div>
 
         </section>
     </div>

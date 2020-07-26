@@ -29,11 +29,11 @@
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": "^7.2",
         "ironphp/ironphp": "@dev"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^7.5"
+	"require-dev": {	
+        "phpunit/phpunit": "^8.5"
     },
     "config": {
         "optimize-autoloader": true,
@@ -49,8 +49,8 @@
         ]
     },
     "bin": ["jarvis"],
-    "minimum-stability": "dev",
-    "prefer-stable": false,
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "scripts": {
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
