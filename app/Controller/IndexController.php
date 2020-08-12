@@ -6,7 +6,6 @@
 namespace App\Controller;
 
 use Friday\Controller\Controller;
-use Friday\Foundation\Application;
 
 class IndexController extends Controller
 {

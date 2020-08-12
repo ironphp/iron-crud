@@ -18,6 +18,7 @@ class IndexModel extends ModelService
     {
         $products = $this->table('products')->getPaginated(5);
         $pagination = $this->getPaginationHtml('?'); //, null, ['ul' => 'pagination', 'li' => ['page-item', 'page-item', 'page-item active'], 'a' => 'page-link']
+
         return [
             'server_root' => SERVER_ROOT,
             'products'    => $products,
@@ -35,7 +36,7 @@ class IndexModel extends ModelService
     /**
      * Get data from table.
      *
-     * @param mix $field
+     * @param mix      $field
      * @param int|null $id
      *
      * @return void
@@ -47,15 +48,15 @@ class IndexModel extends ModelService
         } else {
             return $this->table('user')->where($id)->get($field);
         }
-/*
-    public function get($id)
-        $products = $this->table('products')->where(['id'=>$id])->get();
+        /*
+            public function get($id)
+                $products = $this->table('products')->where(['id'=>$id])->get();
 
-        return [
-            'server_root' => SERVER_ROOT,
-            'products'    => [$products],
-        ];
-*/
+                return [
+                    'server_root' => SERVER_ROOT,
+                    'products'    => [$products],
+                ];
+        */
     }
 
     /**
@@ -66,10 +67,10 @@ class IndexModel extends ModelService
     public function add()
     {
         return $this->table('user')->add(['id'=>3, 'name'=>'pihu', 'user'=>'pihu', 'password'=>'123', 'status'=>1]);
-/*
-    public function add($request)
-        return $this->table('products')->add(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
-*/
+        /*
+            public function add($request)
+                return $this->table('products')->add(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
+        */
     }
 
     /**
@@ -80,10 +81,10 @@ class IndexModel extends ModelService
     public function update()
     {
         return $this->table('user')->where(['id'=>1])->update(['status'=>1, 'name'=>'illu']);
-/*
-    public function update($request, $id)
-        return $this->table('products')->where(['id'=>$id])->update(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
-*/
+        /*
+            public function update($request, $id)
+                return $this->table('products')->where(['id'=>$id])->update(['name'=>$request['name'], 'price'=>$request['price'], 'detail'=>$request['detail']]);
+        */
     }
 
     /**
@@ -94,9 +95,9 @@ class IndexModel extends ModelService
     public function delete()
     {
         return $this->table('user')->where(['id'=>1])->delete();
-/*
-    public function delete($id)
-        return $this->table('products')->where(['id'=>$id])->delete();
-*/
+        /*
+            public function delete($id)
+                return $this->table('products')->where(['id'=>$id])->delete();
+        */
     }
 }
